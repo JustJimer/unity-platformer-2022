@@ -19,7 +19,7 @@ public class PlayerMovement : MonoBehaviour
     private float plaeyrScaleX;
     private float horizontalInput;
 
-    private void Awake()
+    private void Start()
     {
         // getting references from game object
         body = GetComponent<Rigidbody2D>();
@@ -66,6 +66,7 @@ public class PlayerMovement : MonoBehaviour
             wallJumpDelay += Time.deltaTime;
     }
 
+    // jump
     private void Jump()
     {
        if (isGrounded())
@@ -88,16 +89,20 @@ public class PlayerMovement : MonoBehaviour
         
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    // player can use attack
+    public bool attackAvaible()
     {
+        return isGrounded() && !onWall() && horizontalInput == 0;
     }
 
+    // player stands on ground
     private bool isGrounded()
     {
         RaycastHit2D raycastHit = Physics2D.BoxCast(boxCollider.bounds.center, boxCollider.bounds.size, 0, Vector2.down, 0.1f, groundLayer);
         return raycastHit.collider != null;
     }
     
+    // player near wall
     private bool onWall()
     {
         RaycastHit2D raycastHit = Physics2D.BoxCast(boxCollider.bounds.center, boxCollider.bounds.size, 0, new Vector2(transform.localScale.x, 0), 0.1f, wallLayer);
