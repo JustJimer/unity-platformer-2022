@@ -262,14 +262,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: FireballProjectile (4)
       objectReference: {fileID: 0}
-    - target: {fileID: 1548791507375020317, guid: 342397468400b0b41aeb83343f54bfff, type: 3}
-      propertyPath: m_SortingLayer
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1548791507375020317, guid: 342397468400b0b41aeb83343f54bfff, type: 3}
-      propertyPath: m_SortingLayerID
-      value: -1744393109
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 342397468400b0b41aeb83343f54bfff, type: 3}
 --- !u!4 &70978080 stripped
@@ -434,14 +426,6 @@ PrefabInstance:
     - target: {fileID: 1548791507375020316, guid: 342397468400b0b41aeb83343f54bfff, type: 3}
       propertyPath: m_Name
       value: FireballProjectile (6)
-      objectReference: {fileID: 0}
-    - target: {fileID: 1548791507375020317, guid: 342397468400b0b41aeb83343f54bfff, type: 3}
-      propertyPath: m_SortingLayer
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1548791507375020317, guid: 342397468400b0b41aeb83343f54bfff, type: 3}
-      propertyPath: m_SortingLayerID
-      value: -1744393109
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 342397468400b0b41aeb83343f54bfff, type: 3}
@@ -978,14 +962,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: FireballProjectile (7)
       objectReference: {fileID: 0}
-    - target: {fileID: 1548791507375020317, guid: 342397468400b0b41aeb83343f54bfff, type: 3}
-      propertyPath: m_SortingLayer
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1548791507375020317, guid: 342397468400b0b41aeb83343f54bfff, type: 3}
-      propertyPath: m_SortingLayerID
-      value: -1744393109
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 342397468400b0b41aeb83343f54bfff, type: 3}
 --- !u!4 &480951449 stripped
@@ -1052,14 +1028,6 @@ PrefabInstance:
     - target: {fileID: 1548791507375020316, guid: 342397468400b0b41aeb83343f54bfff, type: 3}
       propertyPath: m_Name
       value: FireballProjectile (5)
-      objectReference: {fileID: 0}
-    - target: {fileID: 1548791507375020317, guid: 342397468400b0b41aeb83343f54bfff, type: 3}
-      propertyPath: m_SortingLayer
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1548791507375020317, guid: 342397468400b0b41aeb83343f54bfff, type: 3}
-      propertyPath: m_SortingLayerID
-      value: -1744393109
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 342397468400b0b41aeb83343f54bfff, type: 3}
@@ -3108,14 +3076,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: FireballProjectile (1)
       objectReference: {fileID: 0}
-    - target: {fileID: 1548791507375020317, guid: 342397468400b0b41aeb83343f54bfff, type: 3}
-      propertyPath: m_SortingLayer
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1548791507375020317, guid: 342397468400b0b41aeb83343f54bfff, type: 3}
-      propertyPath: m_SortingLayerID
-      value: -1744393109
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 342397468400b0b41aeb83343f54bfff, type: 3}
 --- !u!4 &1207982340 stripped
@@ -3556,14 +3516,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: FireballProjectile (3)
       objectReference: {fileID: 0}
-    - target: {fileID: 1548791507375020317, guid: 342397468400b0b41aeb83343f54bfff, type: 3}
-      propertyPath: m_SortingLayer
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1548791507375020317, guid: 342397468400b0b41aeb83343f54bfff, type: 3}
-      propertyPath: m_SortingLayerID
-      value: -1744393109
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 342397468400b0b41aeb83343f54bfff, type: 3}
 --- !u!4 &1304176765 stripped
@@ -3714,14 +3666,6 @@ PrefabInstance:
     - target: {fileID: 1548791507375020316, guid: 342397468400b0b41aeb83343f54bfff, type: 3}
       propertyPath: m_Name
       value: FireballProjectile (9)
-      objectReference: {fileID: 0}
-    - target: {fileID: 1548791507375020317, guid: 342397468400b0b41aeb83343f54bfff, type: 3}
-      propertyPath: m_SortingLayer
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1548791507375020317, guid: 342397468400b0b41aeb83343f54bfff, type: 3}
-      propertyPath: m_SortingLayerID
-      value: -1744393109
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 342397468400b0b41aeb83343f54bfff, type: 3}
@@ -4368,14 +4312,6 @@ PrefabInstance:
     - target: {fileID: 1548791507375020316, guid: 342397468400b0b41aeb83343f54bfff, type: 3}
       propertyPath: m_Name
       value: FireballProjectile (8)
-      objectReference: {fileID: 0}
-    - target: {fileID: 1548791507375020317, guid: 342397468400b0b41aeb83343f54bfff, type: 3}
-      propertyPath: m_SortingLayer
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1548791507375020317, guid: 342397468400b0b41aeb83343f54bfff, type: 3}
-      propertyPath: m_SortingLayerID
-      value: -1744393109
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 342397468400b0b41aeb83343f54bfff, type: 3}
@@ -5096,14 +5032,6 @@ PrefabInstance:
     - target: {fileID: 1548791507375020316, guid: 342397468400b0b41aeb83343f54bfff, type: 3}
       propertyPath: m_Name
       value: FireballProjectile (2)
-      objectReference: {fileID: 0}
-    - target: {fileID: 1548791507375020317, guid: 342397468400b0b41aeb83343f54bfff, type: 3}
-      propertyPath: m_SortingLayer
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1548791507375020317, guid: 342397468400b0b41aeb83343f54bfff, type: 3}
-      propertyPath: m_SortingLayerID
-      value: -1744393109
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 342397468400b0b41aeb83343f54bfff, type: 3}
@@ -6228,14 +6156,6 @@ PrefabInstance:
     - target: {fileID: 1548791507375020316, guid: 342397468400b0b41aeb83343f54bfff, type: 3}
       propertyPath: m_Name
       value: FireballProjectile
-      objectReference: {fileID: 0}
-    - target: {fileID: 1548791507375020317, guid: 342397468400b0b41aeb83343f54bfff, type: 3}
-      propertyPath: m_SortingLayer
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1548791507375020317, guid: 342397468400b0b41aeb83343f54bfff, type: 3}
-      propertyPath: m_SortingLayerID
-      value: -1744393109
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 342397468400b0b41aeb83343f54bfff, type: 3}
