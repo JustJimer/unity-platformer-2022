@@ -5,6 +5,7 @@ public class PlayerAttack : MonoBehaviour
     [SerializeField] private float fireballCastDelay;
     [SerializeField] private Transform castPoint;
     [SerializeField] private GameObject[] fireballs;
+    [SerializeField] private AudioClip fireballSound;
 
     private Animator anim;
     private PlayerMovement playerMovement;
@@ -38,13 +39,17 @@ public class PlayerAttack : MonoBehaviour
 
     private void FireballCast()
     {
+        SoundLogic.instance.PlaySound(fireballSound);
         anim.SetTrigger("fireballCast");
+        
 
         // pool fireballs
         fireballs[FindFreeProjectile()].transform.position = castPoint.position;
         fireballs[FindFreeProjectile()].GetComponent<FireballProjectile>().SetDirection(Mathf.Sign(transform.localScale.x));
 
         castDelayTimer = 0;
+
+        
     }
 
 }
