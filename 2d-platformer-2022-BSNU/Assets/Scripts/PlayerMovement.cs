@@ -5,6 +5,7 @@ public class PlayerMovement : MonoBehaviour
     [Header("Movement")]
     [SerializeField] private float speed;
     [SerializeField] private float jumpStrength;
+    [SerializeField] private AudioClip jumpSound;
     [Header("Wall Slipping")]
     [SerializeField] private float slipping;
     [SerializeField] private float reboundStrengthSide;
@@ -109,7 +110,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (coyoteLeft <= 0 && !onWall() && jumpsLeft <= 0) return;
 
-        // SoundLogic.instance.PlaySound(jumpSound);
+        SoundLogic.instance.PlaySound(jumpSound);
 
 
         if (onWall())

@@ -7414,6 +7414,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 10
   jumpStrength: 20
+  jumpSound: {fileID: 8300000, guid: 7d078129ed791224883e7f857bde6bef, type: 3}
   slipping: 4.5
   reboundStrengthSide: 1000
   reboundStrengthUp: 300
@@ -7484,6 +7485,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   respawnHealth: 10
+  damageSound: {fileID: 8300000, guid: 558f9f56f603a954b8d45e17e89341d9, type: 3}
+  deathSound: {fileID: 8300000, guid: bd8857660a16ba549b8cc522d93d9117, type: 3}
+  respawnSound: {fileID: 8300000, guid: c134bf6bd85561b4b938c913b97b57c9, type: 3}
   invunerabilityDuration: 0.5
   numberOfFlashes: 1
 --- !u!114 &1758300550

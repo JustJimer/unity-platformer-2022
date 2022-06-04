@@ -6,6 +6,9 @@ public class HealthSystem : MonoBehaviour
     // health system
     [Header("Health")]
     [SerializeField] private float respawnHealth;
+    [SerializeField] private AudioClip damageSound;
+    [SerializeField] private AudioClip deathSound;
+    [SerializeField] private AudioClip respawnSound;
 
     public float HealthPoints { get; private set; }
 
@@ -32,6 +35,7 @@ public class HealthSystem : MonoBehaviour
         if (HealthPoints > 0)
         {
             anim.SetTrigger("damage");
+            SoundLogic.instance.PlaySound(damageSound);
             StartCoroutine(Invunerability());
         }
         else
@@ -40,6 +44,7 @@ public class HealthSystem : MonoBehaviour
             {
                 anim.SetBool("isGrounded", true);
                 anim.SetTrigger("death");
+                SoundLogic.instance.PlaySound(deathSound);
                 GetComponent<PlayerMovement>().enabled = false;
                 isDead = true;
             }
@@ -71,6 +76,7 @@ public class HealthSystem : MonoBehaviour
         GetComponent<PlayerMovement>().enabled = true;
         isDead = false;
         anim.Play("idle");
+        SoundLogic.instance.PlaySound(respawnSound);
         StartCoroutine(Invunerability());
 
        /* //Activate all attached component classes
