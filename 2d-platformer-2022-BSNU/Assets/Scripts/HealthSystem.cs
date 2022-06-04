@@ -38,6 +38,7 @@ public class HealthSystem : MonoBehaviour
         {
             if (!isDead)
             {
+                anim.SetBool("isGrounded", true);
                 anim.SetTrigger("death");
                 GetComponent<PlayerMovement>().enabled = false;
                 isDead = true;

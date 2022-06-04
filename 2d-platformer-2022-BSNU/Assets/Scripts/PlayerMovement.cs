@@ -2,13 +2,19 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+    [Header("Movement")]
     [SerializeField] private float speed;
     [SerializeField] private float jumpStrength;
+    [Header("Wall Slipping")]
     [SerializeField] private float slipping;
     [SerializeField] private float reboundStrengthSide;
     [SerializeField] private float reboundStrengthUp;
+    [Header("Layers")]
     [SerializeField] private LayerMask groundLayer;
     [SerializeField] private LayerMask wallLayer;
+    [Header("Coyote Time & Multiple Jumps")]
+    [SerializeField] private float coyoteTime;
+    [SerializeField] private int additionalJumps;
 
     private Rigidbody2D body;
     private Animator anim;
@@ -18,6 +24,8 @@ public class PlayerMovement : MonoBehaviour
     private float wallJumpDelay;
     private float plaeyrScaleX;
     private float horizontalInput;
+    private float coyoteLeft;
+    private int jumpsLeft;
 
     private void Start()
     {
@@ -46,47 +54,91 @@ public class PlayerMovement : MonoBehaviour
         anim.SetBool("isWalking", horizontalInput != 0);
         anim.SetBool("isGrounded", isGrounded());
 
-        // wall jumps
-        if (wallJumpDelay > 0.2f)
+        /*        // wall jumps
+                if (wallJumpDelay > 0.2f)
+                {
+                    body.velocity = new Vector2(horizontalInput * speed, body.velocity.y);
+
+                    if (onWall() && !isGrounded())
+                    {
+                        body.gravityScale = slipping;
+                        body.velocity = Vector2.zero;
+                    }
+                    else
+                        body.gravityScale = 6.5f;
+
+                    if (Input.GetKey(KeyCode.Space))
+                        Jump();
+                }
+                else
+                    wallJumpDelay += Time.deltaTime;*/
+
+        //jumps
+        if (Input.GetKeyDown(KeyCode.Space))
+            Jump();
+
+        //smooth jump height
+        if (Input.GetKeyUp(KeyCode.Space) && body.velocity.y > 0)
+            body.velocity = new Vector2(body.velocity.x, body.velocity.y / 2);
+
+
+        if (onWall())
         {
-            body.velocity = new Vector2(horizontalInput * speed, body.velocity.y);
-
-            if (onWall() && !isGrounded())
-            {
-                body.gravityScale = slipping;
-                body.velocity = Vector2.zero;
-            }
-            else
-                body.gravityScale = 6.5f;
-
-            if (Input.GetKey(KeyCode.Space))
-                Jump();
+            body.velocity = Vector2.zero;
+            body.gravityScale = slipping;
         }
         else
-            wallJumpDelay += Time.deltaTime;
+        {
+            body.velocity = new Vector2(horizontalInput * speed, body.velocity.y);
+            body.gravityScale = 6.5f;
+
+            if (isGrounded())
+            {
+                coyoteLeft = coyoteTime; // reset
+                jumpsLeft = additionalJumps; // reset
+            }
+            else
+            {
+                coyoteLeft -= Time.deltaTime;
+            }
+        }
     }
 
     // jump
     private void Jump()
     {
-       if (isGrounded())
-       {
-            body.velocity = new Vector2(body.velocity.x, jumpStrength);
-            anim.SetTrigger("jump");
-       }
-       else if(onWall() && !isGrounded())
-       {
-            if (horizontalInput == 0)
-            {
-                body.velocity = new Vector2(-Mathf.Sign(transform.localScale.x) * reboundStrengthSide * 2, 0);
-                transform.localScale = new Vector3(-Mathf.Sign(transform.localScale.x), transform.localScale.y, transform.localScale.z);
-            }
-            else
-                body.velocity = new Vector2(-Mathf.Sign(transform.localScale.x) * reboundStrengthSide, reboundStrengthUp);
-            wallJumpDelay = 0;
-       }
+        if (coyoteLeft <= 0 && !onWall() && jumpsLeft <= 0) return;
 
-        
+        // SoundLogic.instance.PlaySound(jumpSound);
+
+
+        if (onWall())
+            WallJump();
+        else
+        {
+            if (isGrounded())
+                body.velocity = new Vector2(body.velocity.x, jumpStrength);
+            else
+            {
+                if (coyoteLeft > 0)
+                    body.velocity = new Vector2(body.velocity.x, jumpStrength);
+                else
+                {
+                    if (jumpsLeft > 0)
+                    {
+                        body.velocity = new Vector2(body.velocity.x, jumpStrength);
+                        jumpsLeft--;
+                    }
+                }
+                coyoteLeft = 0;
+            }
+        }
+    }
+
+    private void WallJump()
+    {
+        body.AddForce(new Vector2(-Mathf.Sign(transform.localScale.x) * reboundStrengthSide, reboundStrengthSide));
+        wallJumpDelay = 0;
     }
 
     // player can use attack
