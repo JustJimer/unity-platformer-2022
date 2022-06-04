@@ -63,4 +63,18 @@ public class HealthSystem : MonoBehaviour
         }
         Physics2D.IgnoreLayerCollision(10, 11, false);
     }
+
+    public void Respawn()
+    {
+        AddHealth(respawnHealth);
+        anim.ResetTrigger("death");
+        GetComponent<PlayerMovement>().enabled = true;
+        isDead = false;
+        anim.Play("idle");
+        StartCoroutine(Invunerability());
+
+       /* //Activate all attached component classes
+        foreach (Behaviour component in components)
+            component.enabled = true;*/
+    }
 }
