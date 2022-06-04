@@ -20,6 +20,7 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody2D body;
     private Animator anim;
     private BoxCollider2D boxCollider;
+    private HealthSystem playerHealth;
 
     //private bool isGrounded;
     private float wallJumpDelay;
@@ -35,6 +36,7 @@ public class PlayerMovement : MonoBehaviour
         anim = GetComponent<Animator>();
         boxCollider = GetComponent<BoxCollider2D>();
         plaeyrScaleX = transform.localScale.x;
+        playerHealth = GetComponent<HealthSystem>();
     }
 
     private void Update()
@@ -103,6 +105,15 @@ public class PlayerMovement : MonoBehaviour
                 coyoteLeft -= Time.deltaTime;
             }
         }
+
+        //void damage
+        /*if (transform.position.y < -5)
+        {
+            gameObject.SetActive(false);
+            transform.position = new Vector2(transform.position.x, transform.position.y + 3);
+            playerHealth.TakeDamage(10);
+            gameObject.SetActive(true);
+        }*/
     }
 
     // jump

@@ -20,9 +20,12 @@ public class HealthSystem : MonoBehaviour
     [SerializeField] private float invunerabilityDuration;
     [SerializeField] private int numberOfFlashes;
     private SpriteRenderer spriteRenderer;
+    private Rigidbody2D body;
+   // private float temp = body.gravityScale;
 
     void Start()
     {
+        body = GetComponent<Rigidbody2D>();
         HealthPoints = respawnHealth;
         anim = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
@@ -74,6 +77,10 @@ public class HealthSystem : MonoBehaviour
         AddHealth(respawnHealth);
         anim.ResetTrigger("death");
         GetComponent<PlayerMovement>().enabled = true;
+        
+        //body.gravityScale = 0;
+        //body.gravityScale = temp;
+        GetComponent<PlayerMovement>().transform.position = new Vector2(transform.position.x, -1.7f);
         isDead = false;
         anim.Play("idle");
         SoundLogic.instance.PlaySound(respawnSound);

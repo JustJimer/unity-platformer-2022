@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Ground
   - Checkpoint
+  - Void
+  - Trophy
   layers:
   - Default
   - TransparentFX
