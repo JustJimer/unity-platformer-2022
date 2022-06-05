@@ -22,7 +22,8 @@ public class SpikesLogic : MonoBehaviour
         {
             if (transform.position.x > leftEdge)
             {
-                transform.position = new Vector3(transform.position.x - speed * Time.deltaTime, transform.position.y, transform.position.z);
+                transform.position = new Vector3
+                    (transform.position.x - speed * Time.deltaTime, transform.position.y, transform.position.z);
             }
             else
                 movingLeft = false;
@@ -31,7 +32,8 @@ public class SpikesLogic : MonoBehaviour
         {
             if (transform.position.x < rightEdge)
             {
-                transform.position = new Vector3(transform.position.x + speed * Time.deltaTime, transform.position.y, transform.position.z);
+                transform.position = new Vector3
+                    (transform.position.x + speed * Time.deltaTime, transform.position.y, transform.position.z);
             }
             else
                 movingLeft = true;

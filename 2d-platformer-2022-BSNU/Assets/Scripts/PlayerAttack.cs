@@ -40,16 +40,12 @@ public class PlayerAttack : MonoBehaviour
     private void FireballCast()
     {
         SoundLogic.instance.PlaySound(fireballSound);
-        anim.SetTrigger("fireballCast");
-        
+        anim.SetTrigger("fireballCast");        
 
         // pool fireballs
         fireballs[FindFreeProjectile()].transform.position = castPoint.position;
         fireballs[FindFreeProjectile()].GetComponent<FireballProjectile>().SetDirection(Mathf.Sign(transform.localScale.x));
 
-        castDelayTimer = 0;
-
-        
+        castDelayTimer = 0;        
     }
-
 }

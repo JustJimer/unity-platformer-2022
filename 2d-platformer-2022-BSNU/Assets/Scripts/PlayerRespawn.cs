@@ -16,11 +16,8 @@ public class PlayerRespawn : MonoBehaviour
 
     public void Respawn()
     {
-        playerHealth.Respawn(); //Restore player health and reset animation
-        transform.position = latestCheckpoint.position; //Move player to checkpoint location
-
-        //Move the camera to the checkpoint's room
-      //  Camera.main.GetComponent<CameraMoving>().MoveToNewRoom(latestCheckpoint.parent);
+        playerHealth.Respawn(); // restore player health and reset animation
+        transform.position = latestCheckpoint.position; // move player to checkpoint location
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

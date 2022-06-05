@@ -80,14 +80,11 @@ public class HealthSystem : MonoBehaviour
         
         //body.gravityScale = 0;
         //body.gravityScale = temp;
-        GetComponent<PlayerMovement>().transform.position = new Vector2(transform.position.x, -1.7f);
+        GetComponent<PlayerMovement>().transform.position = 
+            new Vector2(transform.position.x, -1.7f);
         isDead = false;
         anim.Play("idle");
         SoundLogic.instance.PlaySound(respawnSound);
         StartCoroutine(Invunerability());
-
-       /* //Activate all attached component classes
-        foreach (Behaviour component in components)
-            component.enabled = true;*/
     }
 }
